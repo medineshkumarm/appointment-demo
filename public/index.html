@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form">
+        <form id="appointment-form" name="appointment-form" method="post" style="color: black;">
+            <div class="row" style="color: black;">
+                <div class="col-md-6">
+                    <div class="input-box">
+                        <input type="text" name="form_name" placeholder="Patient's Name" required="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-box">
+                        <input type="text" name="age" placeholder="Patient's Age" required="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-box">
+                        <input type="email" name="form_email" placeholder="Email" required="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-box">
+                        <input type="text" name="phone" placeholder="Phone Number" required="">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-box">
+                        <input type="text" name="altPhone" placeholder="Alternate Phone Number" required="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-box">
+                        <input type="text" name="date" placeholder="Appointment Date" id="datepicker" required="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-box">
+                        <input type="text" name="time" placeholder="Time" required="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-box">
+                        <select name="issue" class="selectmenu" required="">
+                            <option selected disabled>Select the issue</option>
+                            <option>Tooth Decay (Cavities)</option>
+                            <option>Gum disease (Periodontal disease)</option>
+                            <option>Tooth sensitivity</option>
+                            <option>Tooth erosion</option>
+                            <option>Tooth grinding</option>
+                            <option>Cracked or Broken teeth</option>
+                            <option>Tooth infection</option>
+                            <option>Oral cancer</option>
+                            <option>Misaligned tooth</option>
+                            <option>Impacted teeth</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <textarea name="form_message" placeholder="Your Message.." required=""></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="thm-btn bg-1" type="submit">Submit</button>   
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+</head>
+<body>
+    <form id="appointmentForm">
+        <input type="text" id="name" placeholder="Name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="text" id="phone" placeholder="Phone" required />
+        <input type="datetime-local" id="date" required />
+        <textarea id="description" placeholder="Description"></textarea>
+        <button type="submit">Book Appointment</button>
+    </form>
+
+    <script src="main.js"></script>
+</body>
+</html> -->
