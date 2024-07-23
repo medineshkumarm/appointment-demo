@@ -100,11 +100,11 @@ app.get("/api/appointments",async(req,res)=> {
  */
 
 app.get("/",(req,res)=> {
-    res.sendFile(path.join(__dirname,"public","index.html"));
+    res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
 app.get("/login",(req,res)=> {
-    res.sendFile(path.join(__dirname,"public","login.html"));
+    res.sendFile(path.join(__dirname, "..", "public", "login.html"));
 });
 
 /**
@@ -134,6 +134,11 @@ app.post("/logout",(req,res)=> {
 
 // make sure to add auth middleware check
 app.get("/admin",(req,res)=>{
-    res.sendFile(path.join(__dirname,"public","admin.html"));
+    res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 
-})
+});
+
+const PORT = 3000;
+app.listen(PORT,()=>{
+    console.log(`Listening to ${PORT}`);
+});
