@@ -4,12 +4,13 @@ const customerSchema = new mongoose.Schema({
     name:{
         type: String,
         required: true,
-        minLength:4,
+        minLength:3,
     },
     age: {
         type: Number,
         min: 1,
         max: 99,
+        required: true,
     },
     email:{
         type:String,
@@ -19,12 +20,12 @@ const customerSchema = new mongoose.Schema({
         match: [/.+\@.+\..+/, 'Please enter a valid email address']
     },
     phone: {
-        type: Number,
+        type: String,
         maxLength:10,
         required:true,
     },
     altPhone:{
-        type:Number,
+        type:String,
         maxLength:10
     },
     createdAt:{

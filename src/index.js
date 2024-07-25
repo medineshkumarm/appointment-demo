@@ -95,8 +95,8 @@ app.get("/api/appointments", async (req, res) => {
  * 3. login.html
  */
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+app.get("/",(req,res)=> {
+    res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
 app.get("/login", (req, res) => {
@@ -135,6 +135,8 @@ app.post("/logout", (req, res) => {
 app.get("/admin", isAuthenticated,(req, res) => {
   res.sendFile(path.join(__dirname, "..", "public", "admin.html"));
 });
+
+
 
 const PORT = 3000;
 app.listen(PORT, () => {
