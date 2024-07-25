@@ -100,8 +100,62 @@ app.get("/api/appointments",async(req,res)=> {
  */
 
 app.get("/",(req,res)=> {
-    res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+    res.sendFile(path.join(__dirname, "..", "public", "appointment.html"));
 });
+
+app.post("/appointment", async (req, res) => {
+    const { form_name, form_age, form_email, form_phonenumber, form_alt_phonenumber, form_date, form_time, form_issue, form_message } = req.body;
+
+// Log or process the form data as needed
+console.log("Form data received and processed");
+
+// Check if a customer with the given email already exists
+try {
+  const existingCustomer = await Customer.findOne({ email: form_email });
+
+  let customerId;
+
+  if (existingCustomer) {
+    // Customer with this email already exists, use the existing customer
+    console.log("Existing customer found:", existingCustomer);
+    customerId = existingCustomer._id;
+  } else {
+    // Customer does not exist, create a new one
+    const newCustomer = new Customer({
+      name: form_name,
+      age: form_age,
+      email: form_email,
+      phone: form_phonenumber,
+      altPhone: form_alt_phonenumber
+    });
+
+    // Save the new customer to the database
+    const savedCustomer = await newCustomer.save();
+    console.log("New customer saved to db:", savedCustomer);
+
+    customerId = savedCustomer._id;
+  }
+
+  // Create the appointment
+  const newAppointment = new Appointment({
+    customer: customerId,
+    date: form_date,
+    time: form_time,
+    issues: form_issue,
+    message: form_message
+  });
+
+  await newAppointment.save();
+  console.log("Appointment saved to db:", newAppointment);
+
+  res.redirect("/");
+} catch (error) {
+  console.error('Error saving data:', error);
+  res.status(500).send('Internal Server Error');
+}
+
+  });
+  
 
 app.get("/login",(req,res)=> {
     res.sendFile(path.join(__dirname, "..", "public", "login.html"));
@@ -137,6 +191,8 @@ app.get("/admin",(req,res)=>{
     res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 
 });
+
+
 
 const PORT = 3000;
 app.listen(PORT,()=>{
