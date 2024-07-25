@@ -1,26 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
-</head>
-<body>
-    <h1>Admin Panel</h1>
-    <table id="appointmentsTable">
-        <tr>
-            <th>Customer</th>
-            <th>Age</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Alt Phone</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Issue</th>
-            <th>Message</th>
-        </tr>
-    </table>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
+      rel="stylesheet"
+    />
 
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Admin Panel</title>
+  </head>
+  <body>
+    <div class="content">
+      <div class="container">
+        <h2 class="mb-5 text-center">Admin Panel</h2>
+        <!-- <p class=" text-center text-white">All Appointments</p> -->
+        <button class="mb-5 btn btn-danger" id="logoutButton">Logout</button>
+
+        <div class="table-responsive custom-table-responsive">
+          <table class="table custom-table appointmentsTable">
+            <thead>
+              <tr>
+                <th scope="col">
+                  <label class="control control--checkbox">
+                    <input type="checkbox" class="js-check-all" />
+                    <div class="control__indicator"></div>
+                  </label>
+                </th>
+                <th scope="col">Patient ID</th>
+                <th scope="col">Patient Name</th>
+                <th scope="col">Email + contact</th>
+                <th scope="col">Issue</th>
+                <th scope="col">Appointment Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Rows will be inserted here by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
